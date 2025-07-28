@@ -1,0 +1,732 @@
+/* ==========================================================================
+   TABLE OF CONTENTS
+   1. CSS Variables (Custom Properties)
+   2. Base Styles
+   3. Typography
+   4. Layout Components
+   5. Color Themes
+   6. Components
+       6.1 Header
+       6.2 Navigation (Desktop & Mobile)
+       6.3 Hero Section
+       6.4 Main Content (Cards, Prose, News)
+       6.5 Footer
+   7. Utilities
+   8. Media Queries
+   9. Accessibility
+   ========================================================================== */
+
+/* ==========================================================================
+   1. CSS Variables (Custom Properties)
+   ========================================================================== */
+:root {
+    /* Colors */
+    --ias-blue: #003366; /* Deep blue */
+    --ias-light-blue: #f0f0f0; /* Light gray for backgrounds */
+    --ias-teal: #008080; /* Teal for accents and hover states */
+    --ias-gold: #8a6100; /* Darker gold for text, WCAG AA on white */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-100: #f8f9fa; /* Slightly off-white for body background */
+    --gray-200: #e9ecef; /* Light gray for borders, dividers */
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd; /* Medium gray for secondary text */
+    --gray-600: #6c757d; /* Darker gray for text */
+    --gray-700: #495057; /* Even darker gray */
+    --gray-800: #343a40; /* Primary text color */
+    --gray-900: #212529; /* Very dark gray / soft black */
+    --red-600: #dc2626;
+
+    /* Typography */
+    --font-primary: 'Lora', Georgia, serif;
+    --font-heading: 'Playfair Display', 'Times New Roman', serif;
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem; /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;  /* 20px */
+    --font-size-2xl: 1.5rem;  /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --font-size-4xl: 2.25rem; /* 36px */
+
+    /* Spacing Scale (based on 4px grid) */
+    --spacing-0: 0;
+    --spacing-px: 1px;
+    --spacing-0-5: 0.125rem; /* 2px */
+    --spacing-1: 0.25rem;   /* 4px */
+    --spacing-1-5: 0.375rem; /* 6px */
+    --spacing-2: 0.5rem;    /* 8px */
+    --spacing-2-5: 0.625rem; /* 10px */
+    --spacing-3: 0.75rem;   /* 12px */
+    --spacing-3-5: 0.875rem; /* 14px */
+    --spacing-4: 1rem;      /* 16px */
+    --spacing-5: 1.25rem;   /* 20px */
+    --spacing-6: 1.5rem;    /* 24px */
+    --spacing-8: 2rem;      /* 32px */
+    --spacing-10: 2.5rem;   /* 40px */
+    --spacing-12: 3rem;     /* 48px */
+    --spacing-16: 4rem;     /* 64px */
+    --spacing-20: 5rem;     /* 80px */
+    --spacing-24: 6rem;     /* 96px */
+
+    /* Layout */
+    --container-max-width: 1200px;
+    --border-radius-sm: 0.25rem; /* 4px */
+    --border-radius-md: 0.5rem;  /* 8px */
+    --border-radius-lg: 1rem;    /* 16px */
+    --border-radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease-in-out;
+    --transition-medium: 0.3s ease-in-out;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-text: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+    /* Z-index Scale */
+    --z-base: 1;
+    --z-dropdown: 1000; /* Ensure dropdowns are above other content */
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-tooltip: 1070;
+}
+
+/* ==========================================================================
+   2. Base Styles
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%; /* Base font size for rem calculation */
+    line-height: 1.5; /* Default line height */
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--gray-800);
+    background-color: var(--gray-100);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal scrollbars */
+}
+
+img, svg, video, canvas, audio, iframe, embed, object {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700; /* Bolder headings */
+    line-height: 1.3; /* Tighter line height for headings */
+    margin-bottom: var(--spacing-4); /* Default bottom margin for headings */
+    color: var(--ias-blue); /* Default heading color */
+}
+
+h1 { font-size: var(--font-size-4xl); } /* ~36px */
+h2 { font-size: var(--font-size-3xl); } /* ~30px */
+h3 { font-size: var(--font-size-2xl); } /* ~24px */
+h4 { font-size: var(--font-size-xl); }  /* ~20px */
+h5 { font-size: var(--font-size-lg); }  /* ~18px */
+h6 { font-size: var(--font-size-base); }/* ~16px */
+
+p {
+    margin-bottom: var(--spacing-4); /* Consistent paragraph spacing */
+}
+
+a {
+    color: var(--ias-blue);
+    text-decoration: none;
+    transition: color var(--transition-fast), text-decoration-color var(--transition-fast);
+}
+
+a:hover, a:focus-visible {
+    color: var(--ias-teal);
+    text-decoration: underline;
+    text-decoration-color: var(--ias-teal);
+}
+
+/* ==========================================================================
+   4. Layout Components
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-4);  /* Default horizontal padding */
+    padding-right: var(--spacing-4);
+}
+
+/* Grid utilities (simple version, can be expanded) */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.gap-8 { gap: var(--spacing-8); }
+
+
+/* ==========================================================================
+   5. Color Themes & Backgrounds
+   ========================================================================== */
+.ias-blue-bg {
+    background-color: var(--ias-blue);
+    color: var(--white);
+}
+.ias-blue-bg a { color: var(--gray-200); } /* Lighter links on dark blue bg */
+.ias-blue-bg a:hover, .ias-blue-bg a:focus-visible { color: var(--white); text-decoration-color: var(--white); }
+
+
+.ias-light-blue-bg {
+    background-color: var(--ias-light-blue);
+    color: var(--gray-800);
+}
+
+.ias-teal-bg {
+    background-color: var(--ias-teal);
+    color: var(--white);
+}
+.ias-teal-bg:hover { background-color: #006666; } /* Darken teal on hover for buttons */
+
+
+.ias-gold-text { color: var(--ias-gold); }
+
+/* ==========================================================================
+   6. Components
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   6.1 Header
+   -------------------------------------------------------------------------- */
+.site-header {
+    background-color: var(--ias-blue);
+    color: var(--white);
+    padding: var(--spacing-5) 0; /* MODIFIED: Increased padding for better proportion */
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: var(--z-sticky);
+    box-shadow: var(--shadow-md);
+}
+
+.site-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller viewports if needed */
+}
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3); /* Space between logo and titles */
+}
+
+.site-logo-link {
+     display: flex;
+     align-items: center;
+     text-decoration: none;
+     color: inherit;
+}
+.site-logo-link:hover, .site-logo-link:focus-visible {
+    text-decoration: none; /* No underline for logo link */
+    opacity: 0.9;
+}
+
+.site-logo-img {
+    width: var(--spacing-12);  /* MODIFIED: Increased logo size */
+    height: var(--spacing-12); /* MODIFIED: Increased logo size */
+    border-radius: var(--border-radius-full);
+    background-color: var(--white); /* Add a white background if logo is transparent */
+    padding: var(--spacing-0-5); /* Small padding if logo needs breathing room */
+}
+
+.site-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dept-title {
+    font-size: var(--font-size-lg);
+    white-space: nowrap;
+    color: var(--gray-300); /* Subtler color for department title */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3); /* Gap between nav, search, mobile button */
+}
+
+/* Search Form in Header */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: var(--spacing-2) var(--spacing-3);
+    border: 1px solid var(--gray-400);
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    background-color: var(--white);
+    color: var(--gray-800);
+    max-width: 150px; /* Limit width */
+    transition: border-color var(--transition-fast);
+}
+.search-form input[type="text"]:focus {
+    border-color: var(--ias-teal);
+    outline: none;
+}
+
+.search-form button {
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    line-height: 1.21; /* To match input height */
+}
+
+
+/* --------------------------------------------------------------------------
+   6.2 Navigation (Desktop & Mobile)
+   -------------------------------------------------------------------------- */
+
+/* Desktop Navigation */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-1); /* Reduced gap for tighter nav */
+}
+
+.main-nav a { /* Applies to top-level links */
+    color: var(--white);
+    text-decoration: none;
+    padding: var(--spacing-2) var(--spacing-3);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    display: block;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible,
+.main-nav li.relative.dropdown > a[aria-expanded="true"] { /* Highlight active dropdown toggle */
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Desktop Dropdown Menu */
+.main-nav .dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: calc(100% + var(--spacing-1)); /* Position below parent with a small gap */
+    background-color: var(--ias-blue); /* Consistent with header */
+    color: var(--white);
+    min-width: 220px;
+    z-index: var(--z-dropdown);
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    padding: var(--spacing-2) 0; /* Vertical padding for the menu itself */
+    box-shadow: var(--shadow-lg);
+    opacity: 0; /* CORRECTED: Hidden by default */
+    visibility: hidden; /* CORRECTED: Hidden by default */
+    transform: translateY(var(--spacing-2)); /* Start slightly lower for animation */
+    transition: opacity var(--transition-medium) ease-out,
+                visibility var(--transition-medium) ease-out, /* Ensure visibility is transitioned */
+                transform var(--transition-medium) ease-out;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.main-nav .dropdown-menu.show {
+    opacity: 1; /* CORRECTED: Show */
+    visibility: visible; /* CORRECTED: Show */
+    transform: translateY(0);
+    pointer-events: auto; /* Allow interaction when shown */
+}
+
+.main-nav .dropdown-menu li a {
+    padding: var(--spacing-2) var(--spacing-4); /* Padding for dropdown items */
+    display: block;
+    color: var(--white);
+    white-space: nowrap;
+    font-size: var(--font-size-sm);
+    font-weight: normal; /* Normal weight for dropdown items */
+    border-radius: 0; /* No border radius for individual items */
+}
+
+.main-nav .dropdown-menu li a:hover,
+.main-nav .dropdown-menu li a:focus-visible {
+    background-color: var(--ias-teal);
+    color: var(--white);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+    color: var(--white);
+    padding: var(--spacing-2);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast);
+}
+.mobile-menu-button:hover, .mobile-menu-button:focus-visible {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.mobile-menu-button svg {
+    width: var(--spacing-6); /* 24px */
+    height: var(--spacing-6); /* 24px */
+}
+
+
+/* Mobile Navigation Panel */
+.mobile-nav {
+    background-color: var(--ias-blue); /* Match header */
+    color: var(--white);
+    padding-top: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+    border-top: 1px solid var(--ias-teal); /* Separator from header */
+    box-shadow: var(--shadow-md);
+}
+
+.mobile-nav.mobile-menu-hidden {
+    display: none;
+}
+.mobile-nav.mobile-menu-visible {
+    display: block;
+}
+
+.mobile-nav ul {
+    list-style: none;
+}
+.mobile-nav ul li a { /* Top level mobile nav links */
+    display: block;
+    padding: var(--spacing-3) var(--spacing-4);
+    color: var(--white);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+    transition: background-color var(--transition-fast);
+}
+.mobile-nav ul li:last-child a {
+    border-bottom: none;
+}
+.mobile-nav ul li a:hover,
+.mobile-nav ul li a:focus-visible {
+    background-color: var(--ias-teal);
+    text-decoration: none;
+}
+
+/* Mobile Navigation Dropdowns */
+.mobile-nav .mobile-dropdown > a {
+    display: flex; /* Allows for an icon/arrow if added */
+    justify-content: space-between;
+    align-items: center;
+}
+/* Add an indicator for dropdowns (optional, requires adding span/svg in HTML) */
+/* .mobile-nav .mobile-dropdown > a::after { content: ' ▼'; font-size: 0.8em; } */
+/* .mobile-nav .mobile-dropdown.open > a::after { content: ' ▲'; } */
+
+
+.mobile-nav .mobile-dropdown > ul {
+    display: none; /* CORRECTED: Hidden by default */
+    list-style: none;
+    padding-left: 0; /* No extra indent, items will be indented */
+    background-color: rgba(0, 0, 0, 0.1); /* Slightly darker bg for submenu */
+    margin-top: 0; /* Remove margin */
+}
+
+.mobile-nav .mobile-dropdown.open > ul {
+    display: block; /* CORRECTED: Show when parent li has .open */
+}
+
+.mobile-nav .mobile-dropdown ul li a {
+    padding: var(--spacing-2-5) var(--spacing-4) var(--spacing-2-5) var(--spacing-8); /* Indent submenu items */
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Fainter separator for sub-items */
+}
+.mobile-nav .mobile-dropdown ul li:last-child a {
+    border-bottom: none;
+}
+
+
+/* --------------------------------------------------------------------------
+   6.3 Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('MathDepartment.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: var(--spacing-16) 0; /* Generous padding */
+    text-align: center;
+}
+
+.hero-dept-name {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    text-shadow: var(--shadow-text);
+}
+
+
+/* --------------------------------------------------------------------------
+   6.4 Main Content
+   -------------------------------------------------------------------------- */
+.main-content {
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+}
+
+/* Event Cards */
+.event-card {
+    background-color: var(--white);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-medium);
+    margin-bottom: var(--spacing-4); /* Space between cards */
+}
+.event-card:hover {
+    box-shadow: var(--shadow-md);
+}
+.event-card a { text-decoration: none; color: inherit; }
+.event-card a:hover .event-title { color: var(--ias-teal); }
+
+.event-title {
+    font-size: var(--font-size-lg); /* Slightly smaller for card titles */
+    color: var(--ias-blue);
+    margin-bottom: var(--spacing-1);
+}
+.event-card p {
+    margin-bottom: var(--spacing-1);
+    font-size: var(--font-size-sm);
+}
+.event-card .text-gray-600 { color: var(--gray-600); }
+.event-card .text-gray-700 { color: var(--gray-700); }
+
+/* Prose for article content */
+.prose h2 { margin-top: var(--spacing-8); }
+.prose p { line-height: 1.7; font-size: var(--font-size-base); }
+.prose a { text-decoration: underline; }
+.prose a:hover { color: var(--ias-teal); }
+
+/* News Items */
+.news-item {
+    background-color: var(--white);
+    border: 1px solid var(--gray-200);
+}
+.news-item h3 { font-size: var(--font-size-xl); }
+
+
+/* --------------------------------------------------------------------------
+   6.5 Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+    padding: var(--spacing-8) 0;
+    font-size: var(--font-size-sm);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+}
+
+.site-footer h4 {
+    font-family: var(--font-heading); /* Use heading font for footer titles */
+    font-size: var(--font-size-lg);
+    color: var(--gray-300); /* Lighter color for titles on dark bg */
+    margin-bottom: var(--spacing-3);
+}
+
+.site-footer p, .site-footer ul li {
+    margin-bottom: var(--spacing-2);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-4);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Lighter border on dark bg */
+    color: var(--gray-400); /* Lighter text for copyright */
+}
+
+
+/* ==========================================================================
+   7. Utilities
+   ========================================================================== */
+.skip-link {
+    position: absolute;
+    left: -9999px; /* Send off-screen */
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    z-index: -999; /* Ensure it's not accidentally visible */
+    background-color: var(--ias-teal);
+    color: var(--white);
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+}
+.skip-link:focus {
+    left: var(--spacing-4);
+    top: var(--spacing-4);
+    width: auto;
+    height: auto;
+    overflow: auto;
+    z-index: var(--z-modal); /* Ensure it's on top when focused */
+}
+
+.hidden { display: none !important; } /* Tailwind-like hidden */
+.relative { position: relative; } /* Tailwind-like relative */
+.text-sm { font-size: var(--font-size-sm); }
+.text-lg { font-size: var(--font-size-lg); }
+.font-medium { font-weight: 500; }
+.space-y-2 > * + * { margin-top: var(--spacing-2); } /* Tailwind-like space-y */
+.space-y-4 > * + * { margin-top: var(--spacing-4); }
+.mt-8 { margin-top: var(--spacing-8); }
+.p-4 { padding: var(--spacing-4); }
+.border { border-width: 1px; }
+.border-gray-200 { border-color: var(--gray-200); }
+.rounded-md { border-radius: var(--border-radius-md); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.transition-shadow { transition-property: box-shadow; transition-timing-function: ease-in-out; transition-duration: var(--transition-medium); }
+
+
+/* Basic button styling (can be extended) */
+.button {
+    display: inline-block;
+    padding: var(--spacing-2-5) var(--spacing-4);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   8. Media Queries
+   ========================================================================== */
+
+/* Medium screens and up (tablets, small desktops) */
+@media (min-width: 768px) { /* md breakpoint */
+    .md\:block { display: block !important; }
+    .md\:hidden { display: none !important; }
+    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .md\:col-span-1 { grid-column: span 1 / span 1; }
+    .md\:col-span-2 { grid-column: span 2 / span 2; }
+
+    .hero-dept-name {
+        font-size: 3.5rem; /* Larger hero text on bigger screens */
+    }
+    .main-nav ul { gap: var(--spacing-3); } /* Slightly more space for desktop nav items */
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) { /* lg breakpoint */
+    .lg\:text-4xl { font-size: var(--font-size-4xl); }
+}
+
+
+/* ==========================================================================
+   9. Accessibility & Print
+   ========================================================================== */
+/* Focus visible polyfill or ensure outlines are clear */
+*:focus-visible {
+    outline: 2px solid var(--ias-teal);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.3); /* Softer glow for focus */
+}
+/* Remove default outline if using custom focus-visible */
+*:focus {
+    outline: none;
+}
+
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Disable smooth scrolling */
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: var(--white);
+        color: var(--black);
+        font-size: 12pt; /* Standard print font size */
+    }
+    .site-header,
+    .mobile-menu-button,
+    .search-form,
+    .hero-section, /* Often not needed in print */
+    .site-footer {
+        display: none !important;
+    }
+    .main-content {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    a {
+        color: var(--black);
+        text-decoration: underline;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--black);
+        page-break-after: avoid;
+    }
+    .event-card, .news-item {
+        box-shadow: none;
+        border: 1px solid var(--gray-300);
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 300px !important; /* Limit image size in print */
+    }
+}
