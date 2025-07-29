@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Course in Analysis, Algebra & Linear Algebra</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333;
+        }
+        /* Custom styles for elements not easily covered by direct Tailwind classes */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #4299e1; /* blue-500 */
+            border-radius: 9999px; /* rounded-full */
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #4299e1, #3182ce); /* blue-500 to blue-700 */
+        }
+        .footer-bg {
+            background-color: #2d3748; /* gray-800 */
+            color: #e2e8f0; /* gray-200 */
+        }
+        .resource-person-img {
+            border: 4px solid #4299e1;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="header-bg text-white py-8 shadow-lg">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <!-- Logos and Main Title Block -->
+            <div class="flex flex-col sm:flex-row items-center mb-4 md:mb-0 text-center sm:text-left">
+                <img src="images/ku.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/ffffff/4299e1?text=KU';" alt="Kannur University Logo" class="h-16 sm:h-20 w-auto mx-2 rounded-full">
+                <div class="mx-4">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mt-2 sm:mt-0">Bridge Course</h1>
+                    <p class="text-lg sm:text-xl md:text-2xl mt-1">Analysis, Algebra & Linear Algebra</p>
+                </div>
+                <img src="images/pmusha.jpg" onerror="this.onerror=null;this.src='https://placehold.co/80x80/ffffff/4299e1?text=PM-USHA';" alt="PM-USHA Logo" class="h-16 sm:h-20 w-auto mx-2 rounded-full mt-2 sm:mt-0">
+            </div>
+            <!-- Dates and Location Block -->
+            <div class="text-center md:text-right">
+                <p class="text-lg sm:text-xl font-semibold">July 28 - August 1, 2025</p>
+                <p class="text-md sm:text-lg mt-1">Department of Mathematical Sciences</p>
+                <p class="text-md sm:text-lg">Kannur University, Mangattuparamba Campus</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- About the Program Section -->
+        <section id="about" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold text-gray-900 mb-8 text-center">About the Program</h2>
+            <p class="text-base sm:text-lg leading-relaxed mb-4">
+                The Department of Mathematical Sciences is organizing a Bridge Course in Analysis, Algebra, and Linear Algebra under the PM-USHA Scheme. This course is designed for incoming first-year M.Sc. Mathematics students, aiming to bridge the academic gap between undergraduate and postgraduate studies.
+            </p>
+            <p class="text-base sm:text-lg leading-relaxed mb-4">
+                The program focuses on strengthening students' understanding of key concepts and enhancing analytical and problem-solving skills. It is particularly beneficial for students from socially and economically disadvantaged groups (SEDG). Sessions will be interactive, combining lectures and problem-solving activities led by experienced and reputed teachers.
+            </p>
+            <ul class="list-disc list-inside text-base sm:text-lg leading-relaxed">
+                <li>Focus on core foundations in Analysis, Algebra, and Linear Algebra</li>
+                <li>Emphasis on conceptual clarity and problem-solving</li>
+                <li>Aims to bridge the gap between undergraduate and postgraduate coursework</li>
+                <li>Combined sessions of lectures and problem solving</li>
+            </ul>
+        </section>
+ <!-- Resource Persons Section -->
+        <section id="resource-persons" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold text-gray-900 mb-8 text-center">Resource Persons</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Prof. A. J. Jayanthan -->
+                <div class="resource-person-card flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-md transition-transform duration-200 hover:translate-y-[-5px]">
+                    <img src="images/jayanthan.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/4299e1/ffffff?text=AJJ';" alt="Prof. A. J. Jayanthan" class="resource-person-img w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Prof. A. J. Jayanthan</h3>
+                    <p class="text-blue-700 font-medium mb-2 text-sm sm:text-base">Kerala School of Mathematics (KSoM)</p>
+                    <p class="text-gray-700 text-xs sm:text-sm leading-relaxed">
+                        Prof. Jayanthan is a well-known mathematics educator currently at KSoM, previously Head of the Department of Mathematics at Goa University. He is a long-time contributor to the MTTS program and is known for his engaging teaching in Algebra.
+                    </p>
+                </div>
+
+                <!-- Dr. Pranav Haridas -->
+                <div class="resource-person-card flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-md transition-transform duration-200 hover:translate-y-[-5px]">
+                    <img src="images/pranav.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/4299e1/ffffff?text=PH';" alt="Dr. Pranav Haridas" class="resource-person-img w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                        <a href="https://pranavharidas.pages.dev">Dr. Pranav Haridas</a>
+                    </h3>
+                    <p class="text-blue-700 font-medium mb-2 text-sm sm:text-base">Kerala School of Mathematics (KSoM)</p>
+                    <p class="text-gray-700 text-xs sm:text-sm leading-relaxed">
+                        Dr. Pranav Haridas received his Ph.D. from IISc Bangalore and has held postdoctoral positions at IIT Madras and CMI. His area is Complex Analysis. He is a widely respected teacher and organizer of several research workshops.
+                    </p>
+                </div>
+
+                <!-- Dr. T. Renjith -->
+                <div class="resource-person-card flex flex-col items-center text-center p-6 bg-gray-50 rounded-xl shadow-md transition-transform duration-200 hover:translate-y-[-5px]">
+                    <img src="images/renjith.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/4299e1/ffffff?text=TR';" alt="Dr. T. Renjith" class="resource-person-img w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover mb-4">
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                        <a href="https://t-renjith.github.io">Dr. Renjith T</a>
+                    </h3>
+                    <p class="text-blue-700 font-medium mb-2 text-sm sm:text-base">Indian Statistical Institute (ISI), Bangalore</p>
+                    <p class="text-gray-700 text-xs sm:text-sm leading-relaxed">
+                        Dr. Renjith received his Ph.D. from IISc Bangalore. His area is Partial Differential Equations. He is a popular teacher at instructional and research workshops.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+         <!-- Syllabus Section -->
+        <section id="syllabus" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold text-gray-900 mb-8 text-center">Syllabus</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-base sm:text-lg leading-relaxed">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Real Analysis</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="syllabus-item">Completeness Property of R: bounds, supremum, infimum</li>
+                        <li class="syllabus-item">Properties: Archimedean, density, uncountability</li>
+                        <li class="syllabus-item">Sequences and Series: convergence, MCT, BWT, Cauchy sequences</li>
+                        <li class="syllabus-item">Series Tests: convergence tests, special series</li>
+                        <li class="syllabus-item">Limits and Continuity: types, differentiability</li>
+                    </ul></br>
+                    <a href="materials/analysis.pdf" style="color: blue;">Click Here</a> for study materials.
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Abstract Algebra</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="syllabus-item">Groups, subgroups, cosets, cyclic and abelian groups</li>
+                        <li class="syllabus-item">Group examples: $S_{n}$, $A_{n}$, $D_{n}$, $Q_{8}$</li>
+                        <li class="syllabus-item">Homomorphism, Isomorphism</li>
+                        <li class="syllabus-item">Group Actions</li>
+                    </ul></br>
+                    <a href="" style="color: blue;">Click Here</a> for study materials.
+                    <h3 class="text-xl font-semibold text-gray-800 mt-6 mb-3">Linear Algebra</h3>
+                    <ul class="list-disc list-inside">
+                        <li class="syllabus-item">Matrices and systems, diagonalization</li>
+                        <li class="syllabus-item">Vector spaces, fields, subspaces</li>
+                        <li class="syllabus-item">Span, linear independence, basis, dimension</li>
+                    </ul></br>
+                    <a href="" style="color: blue;">Click Here</a> for study materials.
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Program Schedule Section -->
+        <section id="schedule" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold text-gray-900 mb-8 text-center">Program Schedule</h2>
+            <div class="text-base sm:text-lg leading-relaxed">
+                <p class="mb-2"><strong class="text-blue-700">Dates:</strong> July 28 - August 1, 2025</p>
+                <p class="mb-2"><strong class="text-blue-700">Venue:</strong> DMS Seminar Hall, Kannur University, Mangattuparamba Campus</p>
+                
+                <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mt-8 mb-4 text-center">Time Table</h3>
+                <div class="overflow-x-auto rounded-lg shadow-md border border-gray-200">
+                    <table class="min-w-full bg-white">
+                        <thead>
+                            <tr>
+                                <th class="py-3 px-4 bg-blue-50 text-blue-800 font-semibold text-left">Date</th>
+                                <th class="py-3 px-4 bg-blue-50 text-blue-800 font-semibold text-left">9:30-11:00</th>
+                                <th class="py-3 px-4 bg-blue-50 text-blue-800 font-semibold text-left">11:30-1:00</th>
+                                <th class="py-3 px-4 bg-blue-50 text-blue-800 font-semibold text-left">2:00-3:30</th>
+                                <th class="py-3 px-4 bg-blue-50 text-blue-800 font-semibold text-left">3:40-5:00 (Tutorial)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-gray-200">
+                                <td class="py-3 px-4">28 July</td>
+                                <td class="py-3 px-4">PH</td>
+                                <td class="py-3 px-4">PH</td>
+                                <td class="py-3 px-4">RT</td>
+                                <td class="py-3 px-4">Tutorial</td>
+                            </tr>
+                            <tr class="border-t border-gray-200 bg-gray-50">
+                                <td class="py-3 px-4">29 July</td>
+                                <td class="py-3 px-4">AJ</td>
+                                <td class="py-3 px-4">PH</td>
+                                <td class="py-3 px-4">AJ</td>
+                                <td class="py-3 px-4">Tutorial</td>
+                            </tr>
+                            <tr class="border-t border-gray-200">
+                                <td class="py-3 px-4">30 July</td>
+                                <td class="py-3 px-4">AJ</td>
+                                <td class="py-3 px-4">RT</td>
+                                <td class="py-3 px-4">AJ</td>
+                                <td class="py-3 px-4">Tutorial</td>
+                            </tr>
+                            <tr class="border-t border-gray-200 bg-gray-50">
+                                <td class="py-3 px-4">31 July</td>
+                                <td class="py-3 px-4">AJ</td>
+                                <td class="py-3 px-4">RT</td>
+                                <td class="py-3 px-4">RT</td>
+                                <td class="py-3 px-4">Tutorial</td>
+                            </tr>
+                            <tr class="border-t border-gray-200">
+                                <td class="py-3 px-4">1 August</td>
+                                <td class="py-3 px-4">PH</td>
+                                <td class="py-3 px-4">PH</td>
+                                <td class="py-3 px-4">RT</td>
+                                <td class="py-3 px-4">Tutorial</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6 text-base">
+                    <p><strong>Speaker Abbreviations:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>PH - Dr. Pranav Haridas (Algebra)</li>
+                        <li>RT - Dr. Renjith T (Analysis)</li>
+                        <li>AJ - Prof. A. J. Jayanthan (Linear Algebra)</li>
+                    </ul>
+                    <p class="mt-4"><strong>Tutorial Tutors:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Praveena P.</li>
+                        <li>Shahana K.</li>
+                        <li>Sreedevi P.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+       
+
+       
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8">
+            <h2 class="section-title text-3xl font-bold text-gray-900 mb-8 text-center">Contact Information</h2>
+            <p class="text-base sm:text-lg leading-relaxed mb-2">For further information, please contact:</p>
+            <p class="text-lg sm:text-xl font-semibold text-blue-700 mb-4">
+                <a href="mailto:anoopvp@kannuruniv.ac.in" class="hover:underline">anoopvp@kannuruniv.ac.in</a>
+            </p>
+            <p class="text-base sm:text-lg leading-relaxed mb-1"><strong>Organizers:</strong> <a href="https://vpanoop.github.io">Anoop V. P.</a>, Sruthymurali</p>
+            <p class="text-base sm:text-lg leading-relaxed">Department of Mathematical Sciences, Kannur University</p>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer-bg py-6 text-center shadow-inner">
+        <div class="container mx-auto px-4">
+            <p class="text-sm sm:text-base">&copy; 2025 Kannur University. All rights reserved.</p>
+            <p class="text-sm sm:text-base mt-1">Funded by the PM-USHA scheme</p>
+        </div>
+    </footer>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                packages: ['base', 'ams']
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            loader: {
+                load: ['[tex]/ams']
+            }
+        };
+    </script>
+
+</body>
+</html>
