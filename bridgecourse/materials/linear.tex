@@ -1,0 +1,76 @@
+
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+
+\section*{Problems 1}
+
+\begin{enumerate} % itemsep adds space between problems
+    \item \textbf{Vector Space Identification:}
+    For each of the following, determine whether the given set $V$ forms a vector space over the specified field $F$ with the defined operations.
+
+    \begin{enumerate}
+        \item
+        $V = \{A \in M_{2 \times 2}(\mathbb{R}) \mid \det(A) \neq 0\}$ (all $2 \times 2$ invertible matrices with real entries)
+
+        \item
+        $V = P_n(\mathbb{R})$ (all polynomials with real coefficients of degree \textit{exactly} $n$, where $n \ge 1$)
+
+        
+
+        \item
+         $V = \{(x, y, z) \in \mathbb{R}^3 \mid y = 2x \text{ and } z = 3x\}$ (the set of vectors in $\mathbb{R}^3$ that lie on the line passing through the origin defined by $y=2x$ and $z=3x$)
+    \end{enumerate}
+
+     \item \begin{itemize}
+        \item \textbf{Statement P:} $\forall v \in V, \exists v' \in V \text{ such that } v + v' = \theta$.
+        \item \textbf{Statement Q:} $\exists v' \in V \text{ such that } \forall v \in V, v + v' = \theta$.
+        \end{itemize}
+        Is statement \textbf{P} and \textbf{Q} are equivalent?
+\item Prove the following 
+\begin{enumerate}
+        \item Additive inverse is unique.
+        \item Scalar zero times any vector is zero vector.($0*v=\theta$)
+        \item Zero vector is unique.
+        \item Scalar times the zero vector is Zero vector.($\alpha*\theta=\theta$)
+        \item $(-1)*v=v'$
+        \item $V+V=2V$.
+        \item $\alpha v=\theta$ if and only if $\alpha=0$ or $v=\theta$.
+     \end{enumerate}
+     
+   
+\vspace{1cm} % Some space at the end
+\end{enumerate}
+
+\newpage
+
+\section*{Problems 2}
+\begin{enumerate} % itemsep adds space between problems
+\item $\alpha v=0$ where $v$ is non zero vector then prove $\alpha=0$.
+\item If $W$ is closed under scalar multiplication and it's non empty, then prove $0\in W$.
+\item If $W$ is a non empty set and for any arbitrary $w_1,w_2 \in W$ then $w_1+\alpha w_2 \in W$, is $W$ is a subspace?
+
+\item $W=\left\{ (x,y) \in \mathbb{R}^2 \mid ax+by=0  \right\}$, is $W$ is a subspace of $ \mathbb{R}^2$?
+\item Let $V = \mathbb{R}^n$. Is $W_{(a_1, a_2,...,a_n) }= \{(x_1, \dots, x_n) \in \mathbb{R}^n \mid a_1x_1 + \dots + + a_nx_n = 0\}$ a subspace of $V$, where $a_i \in \mathbb{R}$ for $i=1, \dots, n$?
+\item Let $\{V_\alpha\}_{\alpha \in I}$ be an arbitrary collection of subspaces of a vector space $V$. Is their intersection, $\bigcap_{\alpha \in I} V_\alpha$, also a subspace of $V$?
+\item 
+$X \neq\phi$, $V = F(X, R)$ for $x \in X$, $W_x = \{f \in V / f(x) = 0\}$ is a subspace of $V$? If $A \subset X$, then $W_A = \bigcap_{a \in A} W_a$. Is $W_A$ a subspace of $V$? What is $W_A$?
+\item \begin{enumerate}
+        \item $W_1,W_2 $ two subspace of $V$, is $W_1\cup W_2 $ a subspace of $V$?
+        \item Prove that if $W_1\cup W_2 $ is subspace, then $W_1 \in W_2$ or  $W_2\in W_1$ . 
+        \end{enumerate}
+\item Let $V = \mathbb{R}[x]$ be the vector space of all polynomials with coefficients in $\mathbb{R}$. Let $W=\{f \in V / f(0) = 0\}$. Is $W$ a subspace of $V$?
+\item Is following are subspace of $ M_n(\mathbb{R})$ 
+\begin{enumerate}
+         \item $W_1 = \{A \in M_n(\mathbb{R}) \mid A = A^T\}$
+    \item $W_2 = \{A \in M_n(\mathbb{R}) \mid A = -A^T\}$
+    \end{enumerate}
+    \item What is $W_1+W_2$?
+    \end{enumerate}
+\vspace{2cm} % Some space at the end
+\begin{center}
+    --- End of Problem Sheet ---
+\end{center}
+
+\end{document}
