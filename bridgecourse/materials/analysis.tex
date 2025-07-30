@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm} % For math symbols, environments
+\usepackage{geometry} % For page margins
+\geometry{a4paper, margin=1in}
+
+
+\begin{document}
+
+\section{Real Numbers and Ordered Fields}
+
+\begin{enumerate}
+
+    \item Prove the following statements are true in every ordered field.
+
+    \begin{enumerate}
+        \item If $x > 0$ then $-x < 0$, and vice versa.
+        \item If $x > 0$ and $y < z$ then $xy < xz$.
+        \item If $x < 0$ and $y < z$ then $xy > xz$.
+        \item If $x \neq 0$ then $x^2 > 0$. In particular, $1 > 0$.
+        \item If $0 < x < y$ then $0 < 1/y < 1/x$.
+    \end{enumerate}
+
+    \item Let $S\subset\mathbb{R}$ and $a\in\mathbb{R}$. Prove that
+    \begin{enumerate}
+        \item $\sup (a+S)=a+\sup S$
+        \item If $a>0$ then $\sup (aS)=a\sup S$
+        \item If $a>0$ then $\sup (aS)=a\inf S$
+    \end{enumerate}
+    \item Prove that supremum property implies infimum property.
+    \item Use Archimedean Property to prove the following
+    \begin{enumerate}
+        \item If $S := \{1/n : n \in \mathbb{N}\}$, then $\inf S = 0$.
+        \item If $t > 0$, there exists $n_t \in \mathbb{N}$ such that $0 < 1/n_t < t$.
+        \item If $y > 0$, there exists $n_y \in \mathbb{N}$ such that $n_y - 1 \leq y \leq n_y$.
+        \item If \( S := \left\{ \frac{1}{n} - \frac{1}{m} : n, m \in \mathbb{N} \right\}, \) find \( \inf S \) and \( \sup S \).
+    \end{enumerate}
+    \item Prove that between any two real numbers there is an irrational number.
+    \item Let \( I_n := [0, 1/n] \) for \( n \in \mathbb{N} \). Prove that
+    \[
+    \bigcap_{n=1}^{\infty} I_n = \{0\}.
+    \]
+
+    \item Let \( J_n := (0, 1/n) \) for \( n \in \mathbb{N} \). Prove that
+    \[
+    \bigcap_{n=1}^{\infty} J_n = \emptyset.
+    \]
+
+    \item Let \( K_n := (n, \infty) \) for \( n \in \mathbb{N} \). Prove that
+    \[
+    \bigcap_{n=1}^{\infty} K_n = \emptyset.
+    \]
+
+\end{enumerate}
+
+\newpage
+
+\section{Sequence and Series}
+
+\begin{enumerate}
+    \item Porve that limit of a sequence if it exist is unique.
+    \item Evaluate the following limits (also prove it using the definition of limit):
+    \begin{enumerate}
+        \item \( \lim_{n \to \infty} \frac{3n}{2n+1} \)
+        \item \( \lim_{n \to \infty} \frac{n}{n^2 + 1} \)
+        \item \( \lim_{n \to \infty} (\sqrt{n+1} - \sqrt n) \)
+    \end{enumerate}
+    \item Let $x_n,y_n$ be two sequences such that $x_n \to x$ and $y_n \to y$. Prove that:
+    \begin{enumerate}
+        \item \( x_n + y_n \to x + y \)
+        \item \( x_n - y_n \to x - y \)
+        \item \( x_n y_n \to xy \)
+        \item \( x_n / y_n \to x/y \) if \( y \neq 0 \)
+    \end{enumerate}
+    \item Prove that if $x_n\to x$ then $|x_n|\to|x|$ and $\sqrt{|x_n|}\to\sqrt{|x|}$.
+    \item Prove that for any real number $x$, there exists a sequence of rational numbers $(x_n)$ such that $x_n \to x$.
+    \item Let $Y = (y_n)$ be defined inductively by $y_1 := 1$, $y_{n+1} := \frac{1}{4}(2y_n+3)$ for $n \ge 1$. Show that $\lim Y = 3/2$.
+    \item Prove that if $\sum x_n$ converges, then $x_n \to 0$.
+\end{enumerate}
+
+
+\end{document}
