@@ -535,7 +535,7 @@ tbody th {
     white-space: nowrap;
 }
 
-.ta-list {
+.support-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 18px;
@@ -544,10 +544,16 @@ tbody th {
     list-style: none;
 }
 
-.ta-list li {
-    padding: 12px 0;
+.support-list li {
+    padding: 9px 0;
     border-bottom: 1px solid var(--line);
-    font-size: 0.9rem;
+    font-size: 0.78rem;
+}
+
+.support-list li span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.68rem;
 }
 
 .organizers {
